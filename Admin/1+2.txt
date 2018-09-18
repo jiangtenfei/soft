@@ -1,0 +1,313 @@
+服务器：机架式服务器最多，以厚度表示大小，1U＝4.445cm
+
+CPU：Intel Xeon(至强)
+
+内存：ECC纠错技术
+
+硬盘：转速10000RPM/15000RPM
+
+服务器一般托管到IDC（Inernet Data Center）
+
+上网采用的结构：C/S(Client/Server)、B/S(Browser/Server)
+
+协议：语言  TCP/IP
+
+地址：ip地址（ipv4/ipv6），ipv6可以给地球上每一粒沙子分配一个IP地址
+
+ARPAnet：DoD（美国国防部）出资创办了高级研究项目署，即ARPA，它把当时美国三所大学的4台计算机连接起来。
+
+一台网络设备，如果联网需要配置的网络参数有：
+
+ip地址：32位的2进制数。因为这么长的2进制数对于人来说，非学点不友好，为了方便人为记忆、表示，每8位转换成一个10进制数，再把4个数字之间用小数点分隔。称作点分10进制的表示方式。
+
+  子网掩码：可以区分ip地址的网络部分和主机部分。2进制数模式下，将网络部分全部写为1，主机部分全部写为0
+
+  缺省网关：路由器连接局域网端口的IP地址
+DNS服务器地址：网络查号台。它可以将好记的名字与不好记的IP地址进行匹配、解析。
+
+电话号码：区号＋座机号码
+ 
+ IP地址：网络部分＋主机部分
+同一城市，区号相同，座机号不同；不同城市，区号不同，座机号可以相同。相同网络，网络部分相同，主机部分不同；不同网络，网络部分不同，主机部分可以相同。
+
+ 采用交换机连接的网络是同一网络。路由器分开不同网络。
+
+主机间通信：
+
+1、PC1（192.168.1.10）与PC2（192.168.2.10）通信，PC1先查看目标与自己是不是同一网络
+2、如果是同一网络，直接发送
+3、如果不是同一网络，发给路由器（网关）
+
+11000000 10101000 00000001 00001010
+11111111 11111111 11111111 00000000
+192      168      1        10
+任何0－255间的数字都可以表示成8个0和1的组合。
+
+00000000 -> 0
+00000001 -> 1
+00000010 -> 2
+00000011 -> 3
+11111111 -> 255
+
+IP地址分类：
+A：前8位作为网络位，第1位必须是0
+B：前16位作为网络位，前2位必须是10
+C：前24位作为网络位，前3位必须是110
+D：前4位必须是1110，用于多播（组播）
+E：前5位必须是11110，保留用于互联网研究
+
+单播：一对一
+多播（组播）：一对部分
+广播：一对全部
+
+Windows修改主机名：桌面计算机上右击－>属性->高级系统设置->计算机名->更改
+
+Windows配置网络参数：桌面网络上右击->属性->更改适配器设置->在本地连接上右击->属性->TCP/IP->属性
+
+Windows查看主机IP地址：开始->运行->cmd->ipconfig/all
+测试网络连通性：ping命令
+ping  127.0.0.1   测试自己的TCP／IP协议是否正常
+127.0.0.1是本地环回地址，表示“我自己”的意思
+ping  网关地址    测试局域网通信是否正常
+Ping   远程主机    测试外网通信
+
+
+
+222222222222222222222222222222222222222222222222222222222222222
+222222222222222222222222222222222222222222222222222222222222222
+22222222222222222222222222222222222222222222222222222222222222
+
+
+
+
+Cisco公司模拟器
+
+网络参数：IP地址、子网掩码、网关、DNS服务器
+
+IP地址：32位2进制数，分成网络部分和主机部分。同一网络（交换机连接），网络部分相同，主机部分不同；不同网络（路由器分隔）网络部分不同，主机部分可以相同。
+
+A：前8位网络位，第1位是0
+B：前16位网络位，前2位是10
+C：前24位网络位，前3位是110
+D：前4位是1110，用于多播
+E：前5位是11110，保留
+
+背，学历不等于能力，学过不等于掌握。
+
+子网掩码：32位2进制数，可以区分IP地址的网络位和主机位。网络位全置1，主机位全置0。
+
+网关：路由器连接局域网的接口IP地址。
+
+DNS服务器：用于域名解析
+
+自由软件、开源软件(Free)
+
+微软：PC领袖
+
+虚拟机：KVM虚拟机
+
+物理主机：CPU／MEMORY／HDD／DVD－ROM
+
+安装RHEL7系统
+1、在虚拟系统管理器中点击新建按钮
+2、选择“本地安装介质”
+3、ISO镜像位置，“浏览“->右下角“本地浏览”－>左下角“计算机”->右窗格，双击ISO目录，选择rhel-server-7.4-x86_64-dvd.iso
+4、内存用2048M，CPU选择1颗
+5、硬盘大小，写50G
+6、名称填写“myrhel7“
+
+GUI：Graphical  User  Interface图形用户界面
+CLI：Command  Line  Interface命令行界面
+
+Windows分区：
+
+C盘只安装系统，D盘只安装程序，E盘保存常用文件，F盘保存不常用文件
+Linux为分区起名，不采用CDEF这样的称呼，叫什么自己决定。
+Linux有一些默认的名字，比如可执行文件目录叫bin或sbin，为用户准备的目录叫home，为那些经常有变动的目录起名为var，为临时文件夹起名为tmp
+
+Linux认为一切皆文件，硬件设备也是文件，存放在/dev目录下
+磁盘文件的命名：如果是物理磁盘，起名为sd，如果是虚拟盘，起名为vd。一台主机上可以有多块磁盘（U盘），采用abcdef字母来表示第几块盘。磁盘上的分区用12345这样的数字表示。
+
+如果要访问分区，先要把分区和一个目录映射起来，叫做挂载。
+
+磁盘分区结束后，还需要格式化。格式化可以选择ext4/xfs。Ext文件系统适合小文件，XFS适合大文件。
+
+Linux默认管理员是root，其他用户都是普通用户。
+
+RHEL7图形界面设置
+1、点击屏幕右上角，再点击出现的左下角的“扳手”图标，常用设置包括“隐私”、“电源”、区域和语言
+2、工作区：多个窗口的分类，按ctrl+alt+上下箭头
+
+RHEL7命令行界面：
+
+1、RHEL7默认打开了6个终端。按ctrl+alt+Fn（F1－F6）切换
+
+2、在图形界面下还可以打开伪终端：桌面上右击，选择“打开终端”
+
+3、伪终端字体大小快捷键是ctrl + +/ ctrl + -
+
+4、命令提示符的含义：
+[root@localhost ~]# 
+[用户名@主机名 当前工作路径]用户提示符；如果是root，用户提示符是#，如果是非root用户，用户提示符是$
+
+5、显示当前用户
+[root@localhost ~]# whoami
+root
+[root@localhost ~]# w<tab><tab>  显示所有以w开头的命令
+
+6、显示主机名
+[root@localhost ~]# hostname
+localhost.localdomain
+[root@localhost ~]# hostname  -s
+localhost
+
+7、说明：命令、选项、路径等在linux下都区分大小写。命令、选项、参数之间必须有空格
+
+8、显示当前工作目录
+[root@localhost ~]# pwd
+/root
+
+9、切换用户
+[root@localhost ~]#  su  zzg
+[zzg@localhost root]$ 
+
+10、列出文件或目录：ls
+[root@localhost ~]# ls  /tmp
+黑色字体表示单个文件，目录用蓝字表示，绿字表示有执行权限
+
+11、在/tmp目录下创建demo
+[root@localhost ~]# mkdir  /tmp/demo
+在/tmp/demo下创建abc和xyz
+[root@localhost ~]# mkdir  /tmp/demo/abc  /tmp/demo/xyz
+
+12、切换工作目录：cd
+(1)只要输入cd就会进入自己的家目录。root的家目录是/root。家目录就是该用户拥有绝对权限的目录，可以删除、写入等。zhangsan的家目录是/home/zhangsan，lisi的家目录是/home/lisi
+[root@localhost /]# cd
+（2）切换到/tmp/demo/abc
+[zzg@localhost ~]$ cd  /tmp/demo/abc/
+[zzg@localhost abc]$ pwd
+/tmp/demo/abc
+(3)切换到上一级目录。  ..表示父目录
+[root@localhost abc]# cd  ..
+[root@localhost demo]# pwd
+/tmp/demo
+（4）切换到当前目录下的xyz中
+[root@localhost demo]# cd  xyz
+（5）绝对路径：以/开头的路径，如/tmp/demo/abc
+（6）相对路径：相对某一位置的路径，如xyz，表示相对当前路径的目录xyz
+（7）以相对路径切换到/home下
+[root@localhost xyz]# pwd
+/tmp/demo/xyz
+[root@localhost xyz]# cd  ../../../home
+[root@localhost home]# pwd
+/home
+（8）一个英文句点 . 表示当前路径
+[root@localhost home]# cd  /tmp/demo/
+[root@localhost demo]# cd  ./abc/
+[root@localhost abc]# cp  /etc/hosts  .   ->拷贝/etc/hosts到当前目录
+
+13、查看/tmp/demo/abc下详细信息
+[root@localhost abc]# ls  -l  /tmp/demo/abc/
+
+14、以KMG显示文件大小，而不是字节
+[root@localhost abc]# ls  -l  -h  /root/  或
+[root@localhost abc]# ls  -lh  /root/
+15、ls  -l因为非常常用，所以为其指定了别名，叫ll
+
+16、查看内核版本号
+[root@localhost abc]# uname  -r
+
+17、查看操作系统的版本号
+[root@localhost abc]# cat  /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+
+18、查看ls的帮助
+[root@localhost abc]# ls  --help
+
+19、命令格式
+命令  [选项]...   [参数]...
+[ ]表示可选项， ...表示可以有多个
+选项有短格式和长格式，如ls  -a和ls  --all都是显示所有文件。
+
+20、查看CPU
+[root@room8pc16 ~]# lscpu 
+
+21、查看内存信息
+[root@room8pc16 ~]# cat  /proc/meminfo   或
+[root@room8pc16 ~]# free  -m  以多少兆来显示大小
+
+22、查看网卡信息
+[root@room8pc16 ~]# ifconfig 
+lo ->loopback，本地环回，127.0.0.1
+enp2s0：物理网卡以en开头，表示以太网
+ethX：传统命名方式（RHEL7之前的命名方式）
+
+23、关机
+[root@localhost abc]# shutdown  -h  now
+
+24、重起
+[root@localhost abc]# reboot 或
+[root@localhost abc]# shutdown  -r  now
+
+25、远程管理服务器：以root身份登陆172.40.50.116
+[root@room8pc16 ~]# ssh  root@172.40.50.116
+
+26、创建空文件
+[root@localhost abc]# touch abc.txt
+[root@localhost abc]# ls
+abc.txt  hosts
+
+27、在终端屏幕上显示文件内容
+[root@localhost abc]# cat  /etc/passwd
+[root@localhost abc]# cat  -n  /etc/passwd
+
+28、分屏显示文件内容
+[root@room8pc16 ~]# more  /etc/passwd
+按回车向下逐行翻，按空格逐屏向下翻。按q退出。输入/nologin用于搜索nologin，按n向下继续搜索，按N向上继续搜索。
+[root@room8pc16 ~]# less  /etc/passwd  
+less与more类似，但是还可以按Home/End/PageUp/PageDown
+
+29、head/tail默认查看文件头部/尾部10行，也可以自行指定
+[root@room8pc16 ~]# head  /etc/passwd
+[root@room8pc16 ~]# tail  /etc/passwd
+[root@room8pc16 ~]# head  -3  /etc/passwd
+[root@room8pc16 ~]# tail  -2  /etc/passwd
+
+30、查看包含adm的行
+[root@room8pc16 ~]# grep  adm  /etc/passwd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
